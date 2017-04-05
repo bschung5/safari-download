@@ -1,6 +1,7 @@
 console.log("Injecting safari book download extension");
 
 function getBookNameFromUrl(book_url) {
+
     var re = new RegExp('\.*/library/view/(\.+)/\\d+/\.*');
     var book_name = re.exec(book_url)[1];
     return book_name
@@ -16,7 +17,7 @@ function removeHashTag(book_url) {
 
 // Listen for messages
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-    console.log(msg);
+    //console.log(msg);
     // If the received message has the expected format...
     if (msg.text === 'get_url_name_map') {
         var chapter_count = 0;
