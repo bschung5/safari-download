@@ -180,8 +180,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var book_name;
 
     chrome.tabs.onUpdated.addListener(function(tabId , info) {
-      if(tabId == tab.id && info.status == "complete")location.reload();
-      window.close();
+      if(tabId == tab.id && info.status == "complete"){
+        location.reload();
+        window.close();
+      }
     });
 
     loadAllInQueueButton.addEventListener('click', function() {
